@@ -10,7 +10,7 @@ function matrixCreator(x, y) {
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  var matrix = matrixCreator(40, 120);
+  var matrix = matrixCreator(4, 4);
   generateGrid(matrix);
 
   function generateGrid(matrix){
@@ -104,16 +104,12 @@ document.addEventListener('DOMContentLoaded', function(){
      matrix = calculateNextState(matrix);
     generateGrid(matrix);
   
-    }, 50);     
+    }, 10);     
 }); 
 
 
   });
 
-
-
-
-// look up set interval function and how to run
 
 
 
