@@ -9,8 +9,8 @@ function matrixCreator(x, y) {
   return matrix;
 }
 
-document.addEventListener('DOMContentLoaded', function(){
-  var matrix = matrixCreator(4, 4);
+$(document).ready(function(){
+  var matrix = matrixCreator(40, 120);
   generateGrid(matrix);
 
   function generateGrid(matrix){
@@ -97,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function(){
     return nextState;
   }
 
-
  document.querySelector("#tick").addEventListener('click', function(){
     // Tick button has been pressed
     setInterval(function () {
@@ -109,8 +108,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   });
-
-
 
 
 
