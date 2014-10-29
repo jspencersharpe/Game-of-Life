@@ -10,7 +10,7 @@ function matrixCreator(x, y) {
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  var matrix = matrixCreator(100, 100);
+  var matrix = matrixCreator(40, 120);
   generateGrid(matrix);
 
   function generateGrid(matrix){

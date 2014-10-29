@@ -1,12 +1,15 @@
 td {
-  padding: 1em;
-  font-size: 150%;
+  height: 5px;
+  width: 5px;
+  font-size: 100%;
 }
 
 td.alive {
   background-color: green;
+  color: green;
 }
 
 td.dead {
   background-color: #ccc;
+  color: #ccc;
 }
