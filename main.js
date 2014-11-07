@@ -14,36 +14,36 @@ $(document).ready(function(){
   generateGrid(matrix);
 
   function generateGrid(matrix){
-    var $table = document.querySelector('#grid');
-    $table.innerHTML = '';
+    var $table = $('#grid');
+    $($table).empty();
     // matrix => [0, 0, 0]
     //           [1, 1, 1]
     //           [0, 0, 0]
 
     matrix.forEach(function(row){ // first time, row => [0, 0, 0]
       // create a tr for the row
-      var $tr = document.createElement('tr');
+      var $tr = $('<tr></td>');
       row.forEach(function(cell){ // first time, cell => 0
         // cell goes into a new td
         // that td goes into a tr
         var $td = createTableCell(cell);
-        $td.textContent = cell;
-        $tr.appendChild($td);
+        $($td).text(cell);
+        $($tr).append($td);
         // alternative:
         // $tr.appendChild( createTableCell(cell) );
       });
       // add that tr to the table
-      $table.appendChild($tr);
+      $($table).append($tr);
     });
   }
 
   function createTableCell(value){
-    var $td = document.createElement('td');
+    var $td = $('<td></td>');
     // Apply alive or dead class to the td
     if(value === 1){
-      $td.classList.add('alive');
+      $($td).addClass('alive');
     } else {
-      $td.classList.add('dead');
+      $($td).addClass('dead');
     }
     return $td;
   }
@@ -82,14 +82,14 @@ $(document).ready(function(){
               } else { nextCellState = 1;
               }        
                 
-         } else {
+            } else {
                if (nextCellState  === 3) {
                   nextCellState  = 1;
                } else {
                    nextCellState  = 0;    
          }
         }
-       
+
         nextRow.push(nextCellState);
       });
       nextState.push(nextRow);
@@ -97,17 +97,15 @@ $(document).ready(function(){
     return nextState;
   }
 
- document.querySelector("#tick").addEventListener('click', function(){
+ $("#tick").on('click', function(){
     // Tick button has been pressed
     setInterval(function () {
      matrix = calculateNextState(matrix);
     generateGrid(matrix);
   
     }, 10);     
-}); 
-
-
-  });
+    }); 
+});
 
 
 
